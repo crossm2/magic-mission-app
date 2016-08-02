@@ -1,0 +1,10 @@
+/*
+Material has p margin-bottom 16px. To override,
+I added specificity to the Li's p elements
+*/
+.workout-item {
+  p {
+    margin-bottom: 0;
+  }
+
+}
