@@ -59,10 +59,10 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer']
-      },
+      sass: {
+    files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+    tasks: ['sass:server', 'autoprefixer']
+},
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -222,33 +222,31 @@ module.exports = function (grunt) {
     },
 
     // Compiles Sass to CSS and generates necessary files if requested
-    compass: {
+    sass: {
       options: {
-        sassDir: '<%= yeoman.app %>/styles',
-        cssDir: '.tmp/styles',
-        generatedImagesDir: '.tmp/images/generated',
-        imagesDir: '<%= yeoman.app %>/images',
-        javascriptsDir: '<%= yeoman.app %>/scripts',
-        fontsDir: '<%= yeoman.app %>/styles/fonts',
-        importPath: './bower_components',
-        httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
-        relativeAssets: false,
-        assetCacheBuster: false,
-        raw: 'Sass::Script::Number.precision = 10\n'
+          includePaths: [
+              'bower_components'
+          ]
       },
       dist: {
-        options: {
-          generatedImagesDir: '<%= yeoman.dist %>/images/generated'
-        }
+          files: [{
+              expand: true,
+              cwd: '<%= yeoman.app %>/styles',
+              src: ['*.scss'],
+              dest: '.tmp/styles',
+              ext: '.css'
+          }]
       },
       server: {
-        options: {
-          sourcemap: true
-        }
+          files: [{
+              expand: true,
+              cwd: '<%= yeoman.app %>/styles',
+              src: ['*.scss'],
+              dest: '.tmp/styles',
+              ext: '.css'
+          }]
       }
-    },
+  },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -273,7 +271,7 @@ module.exports = function (grunt) {
           html: {
             steps: {
               js: ['concat', 'uglifyjs'],
-              css: ['cssmin']
+              css: []
             },
             post: {}
           }
@@ -401,7 +399,14 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        }]
+        },  {
+          expand: true,
+          cwd: '<%= yeoman.app %>/styles',
+          dest: '.tmp/styles/',
+          src: '{,*/}*.css'
+        }
+      ]
+
       },
       styles: {
         expand: true,
@@ -413,18 +418,19 @@ module.exports = function (grunt) {
 
     // Run some tasks in parallel to speed up the build process
     concurrent: {
-      server: [
-        'compass:server'
-      ],
-      test: [
-        'compass'
-      ],
-      dist: [
-        'compass:dist',
-        'imagemin',
-        'svgmin'
-      ]
-    },
+  server: [
+    'sass:server',
+    'copy:styles'
+  ],
+  test: [
+    'copy:styles'
+  ],
+  dist: [
+    'sass',
+    'copy:styles',
+    'svgmin'
+  ]
+},
 
     // Test settings
     karma: {
@@ -475,7 +481,7 @@ module.exports = function (grunt) {
     'ngAnnotate',
     'copy:dist',
     'cdnify',
-    'cssmin',
+  //  'cssmin',
     'uglify',
     'filerev',
     'usemin',
