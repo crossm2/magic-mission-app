@@ -5,6 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 50px;
   }
   .workout-item {
     display: flex;
@@ -15,9 +16,10 @@
     -webkit-transition: all .1s ease-in-out;
     -moz-transition: all .1s ease-in-out;
     transition: all .1s ease-in-out;
-  }
-  .workout-item:hover {
-    background-color: $grey-hover;
+
+    &:hover {
+      background-color: $grey-hover;
+    }
   }
   p {
     font-size: 14px;
@@ -55,6 +57,17 @@ li {
   height: 50px;
 }
 
+.next-box {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  width: 50px;
+  height: 100%;
+
+  &:hover {
+    background-color: $grey-hover;
+  }
+}
 
 //OLD CODE
 //.workout-container {
