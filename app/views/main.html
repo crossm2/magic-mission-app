@@ -25,71 +25,58 @@
   </div>
   <main class="mdl-layout__content">
     <div class="page-content">
+
+<!--new code-->
+      <div class="circuit-container">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="circuit_1()">
+          Circuit 1
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="circuit_2()">
+          Circuit 2
+        </button>
+        <!--Trying tabs-->
+        <!--<div class="mdl-layout__tab-bar mdl-js-ripple-effect menu-tabs">-->
+        <!--<a href="#scroll-tab-1" class="mdl-layout__tab is-active" ng-mouseenter="testClickFunction()">Circuit 1</a>-->
+        <!--<a href="#scroll-tab-2" class="mdl-layout__tab">Circuit 2</a>-->
+        <!--</div>-->
+      </div>
+
+
       <div class="workout-container">
-
         <div class="workout">
-          <h2>Today's Workout</h2>
-          <div class="circuit-container">
-            <!--TODO add ng clicks to h2 circuits. Active color is black, not active is gray.-->
-            <!--TODO maybe on mobile circuit 2 is hidden, and desktop they are vertical?-->
-            <!--<h4>Circuit 1</h4>-->
-            <!--<h4>Circuit 2</h4>-->
 
-            <!--TODO change Circuit buttons to tabs? or just text-->
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="circuit_1()">
-              Circuit 1
-            </button>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="circuit_2()">
-            Circuit 2
-            </button>
-          </div>
           <!-- Circuit 1 -->
-        <div class="circuit-1" ng-show="showCircuit1">
-          <h4>Circuit 1</h4>
-          <ul>
-            <!--Exercise-->
-            <li class="">
-              <div class="workout-item" ng-click="see_Demo()">
-                <p class="">Pushups</p>
-                <!--TODO The click on the icon button must be separate from clicking the workout for the demo
-                May need to move button outside div and use positioning to overlay -->
-                <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" ng-click="next_Exercise()">
-                  <i class="material-icons" >keyboard_arrow_right</i>
-                </button>
-              </div>
-              <!--TODO when workout-item is clicked, this visual shows.
-              When this is set up with ng-repeat, this feature will work on all exercises.
-              -->
-              <div class="workout-visual" ng-show="showDemo">
-                <ul class="circuit-exercises">
-                <li><span>Equipment:</span> {{data.Exercises.Exercise1.Equipment}}</li>
-                <li><span>Weight Range:</span> {{data.Exercises.Exercise1.WeightRange}}</li>
-                <li><span>Sets:</span> {{data.Exercises.Exercise1.Sets}}</li>
-                <li><span>Time:</span> {{data.Exercises.Exercise1.Time}}</li>
-                <li><span>Reps:</span> {{data.Exercises.Exercise1.Reps}}</li>
-                <li><span>Section:</span> {{data.Exercises.Exercise1.Section}}</li>
-                <li><span>Body Parts:</span> {{data.Exercises.Exercise1.BodyParts}}</li>
-                <li><span>Steps:</span> {{data.Exercises.Exercise1.Steps[0].step}}</li>
-                <li> {{data.Exercises.Exercise1.Steps[1].step}}</li>
-                <li> {{data.Exercises.Exercise1.Steps[2].step}}</li>
-                <li><span>Modifications:</span> {{data.Exercises.Exercise1.MODS}}</li>
+          <div class="circuit-1" ng-show="showCircuit1">
+            <!--<h4>Circuit 1</h4>-->
+            <ul class="list">
 
-              </ul>
-              </div>
-            </li>
+              <!--Exercise-->
+              <li>
+                <div class="workout-parent">
+                  <!--Workout Demo button-->
+                  <div class="workout-item" ng-click="see_Demo()">
+                    <div class=""><p>AngularExercise</p></div>
+                  </div>
+                  <!--Next Workout button-->
+                  <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored"
+                          ng-click="next_Exercise()">
+                    <i class="material-icons">keyboard_arrow_right</i>
+                  </button>
+                </div>
+
+
+                <!--Demo img, hidden-->
+                <div class="workout-visual" ng-show="showDemo">
+                  <img src="images/demo-placeholder.jpg">
+                </div>
+              </li>
 
               <!--Exercise-->
               <li class="">
-                <div class="workout-item">
-                  <p class="">Box Jumps</p>
-                  <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
-                    <i class="material-icons" ng-click="">keyboard_arrow_right</i>
-                  </button>
-                </div>
-              </li>
-              <li class="">
-                <div class="workout-item">
-                  <p class="">Plyo Squats</p>
+                <div class="workout-parent">
+                  <div class="workout-item">
+                    <p class="">Box Jumps</p>
+                  </div>
                   <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                     <i class="material-icons" ng-click="">keyboard_arrow_right</i>
                   </button>
@@ -98,8 +85,22 @@
 
               <!--Exercise-->
               <li class="">
-                <div class="workout-item">
-                  <p class="">Side Planks</p>
+                <div class="workout-parent">
+                  <div class="workout-item">
+                    <p class="">Plyo Squats</p>
+                  </div>
+                  <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                    <i class="material-icons" ng-click="">keyboard_arrow_right</i>
+                  </button>
+                </div>
+              </li>
+
+              <!--Exercise-->
+              <li class="">
+                <div class="workout-parent">
+                  <div class="workout-item">
+                    <p class="">Side Planks</p>
+                  </div>
                   <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
                     <i class="material-icons" ng-click="">keyboard_arrow_right</i>
                   </button>
@@ -108,6 +109,91 @@
 
             </ul>
           </div>
+
+      <!--old code-->
+      <!--<div class="workout-container">-->
+
+        <!--<div class="workout">-->
+          <!--<h2>Today's Workout</h2>-->
+          <!--<div class="circuit-container">-->
+            <!--&lt;!&ndash;TODO add ng clicks to h2 circuits. Active color is black, not active is gray.&ndash;&gt;-->
+            <!--&lt;!&ndash;TODO maybe on mobile circuit 2 is hidden, and desktop they are vertical?&ndash;&gt;-->
+            <!--&lt;!&ndash;<h4>Circuit 1</h4>&ndash;&gt;-->
+            <!--&lt;!&ndash;<h4>Circuit 2</h4>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;TODO change Circuit buttons to tabs? or just text&ndash;&gt;-->
+            <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-button&#45;&#45;colored" ng-click="circuit_1()">-->
+              <!--Circuit 1-->
+            <!--</button>-->
+            <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-button&#45;&#45;colored" ng-click="circuit_2()">-->
+            <!--Circuit 2-->
+            <!--</button>-->
+          <!--</div>-->
+          <!--&lt;!&ndash; Circuit 1 &ndash;&gt;-->
+        <!--<div class="circuit-1" ng-show="showCircuit1">-->
+          <!--<h4>Circuit 1</h4>-->
+          <!--<ul>-->
+            <!--&lt;!&ndash;Exercise&ndash;&gt;-->
+            <!--<li class="">-->
+              <!--<div class="workout-item" ng-click="see_Demo()">-->
+                <!--<p class="">Pushups</p>-->
+                <!--&lt;!&ndash;TODO The click on the icon button must be separate from clicking the workout for the demo-->
+                <!--May need to move button outside div and use positioning to overlay &ndash;&gt;-->
+                <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;icon mdl-button&#45;&#45;colored" ng-click="next_Exercise()">-->
+                  <!--<i class="material-icons" >keyboard_arrow_right</i>-->
+                <!--</button>-->
+              <!--</div>-->
+              <!--&lt;!&ndash;TODO when workout-item is clicked, this visual shows.-->
+              <!--When this is set up with ng-repeat, this feature will work on all exercises.-->
+              <!--&ndash;&gt;-->
+              <!--<div class="workout-visual" ng-show="showDemo">-->
+                <!--<ul class="circuit-exercises">-->
+                <!--<li><span>Equipment:</span> {{data.Exercises.Exercise1.Equipment}}</li>-->
+                <!--<li><span>Weight Range:</span> {{data.Exercises.Exercise1.WeightRange}}</li>-->
+                <!--<li><span>Sets:</span> {{data.Exercises.Exercise1.Sets}}</li>-->
+                <!--<li><span>Time:</span> {{data.Exercises.Exercise1.Time}}</li>-->
+                <!--<li><span>Reps:</span> {{data.Exercises.Exercise1.Reps}}</li>-->
+                <!--<li><span>Section:</span> {{data.Exercises.Exercise1.Section}}</li>-->
+                <!--<li><span>Body Parts:</span> {{data.Exercises.Exercise1.BodyParts}}</li>-->
+                <!--<li><span>Steps:</span> {{data.Exercises.Exercise1.Steps[0].step}}</li>-->
+                <!--<li> {{data.Exercises.Exercise1.Steps[1].step}}</li>-->
+                <!--<li> {{data.Exercises.Exercise1.Steps[2].step}}</li>-->
+                <!--<li><span>Modifications:</span> {{data.Exercises.Exercise1.MODS}}</li>-->
+
+              <!--</ul>-->
+              <!--</div>-->
+            <!--</li>-->
+
+              <!--&lt;!&ndash;Exercise&ndash;&gt;-->
+              <!--<li class="">-->
+                <!--<div class="workout-item">-->
+                  <!--<p class="">Box Jumps</p>-->
+                  <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;icon mdl-button&#45;&#45;colored">-->
+                    <!--<i class="material-icons" ng-click="">keyboard_arrow_right</i>-->
+                  <!--</button>-->
+                <!--</div>-->
+              <!--</li>-->
+              <!--<li class="">-->
+                <!--<div class="workout-item">-->
+                  <!--<p class="">Plyo Squats</p>-->
+                  <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;icon mdl-button&#45;&#45;colored">-->
+                    <!--<i class="material-icons" ng-click="">keyboard_arrow_right</i>-->
+                  <!--</button>-->
+                <!--</div>-->
+              <!--</li>-->
+
+              <!--&lt;!&ndash;Exercise&ndash;&gt;-->
+              <!--<li class="">-->
+                <!--<div class="workout-item">-->
+                  <!--<p class="">Side Planks</p>-->
+                  <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;icon mdl-button&#45;&#45;colored">-->
+                    <!--<i class="material-icons" ng-click="">keyboard_arrow_right</i>-->
+                  <!--</button>-->
+                <!--</div>-->
+              <!--</li>-->
+
+            <!--</ul>-->
+          <!--</div>-->
 
           <!-- Circuit 2 -->
           <div class="circuit-2" ng-show="showCircuit2">
