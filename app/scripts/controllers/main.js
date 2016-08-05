@@ -17,25 +17,40 @@
 
     // The obj variable will appear to be empty here and won't contain any remote data,
     // because the request to the server has not returned when we reach this line.
-    /**
-     * Change visibility for Circuits
-     * @type {boolean}
-     */
 
-    //Set state for visibility for Circuits
+
+    //Set visibility for Circuits
     $scope.showCircuit1 = true;
     $scope.showCircuit2 = false;
 
-    $scope.circuit_1= function() {
+    //Set visibility for tab underline
+    // $scope.circuit_1_underline = true;
+    // $scope.circuit_2_underline = false;
+
+
+    $scope.circuit1= function() {
       //when button for circuit1 is clicked, hide cir2, show cir1
       $scope.showCircuit1 = true;
       $scope.showCircuit2 = false;
+
+      //show underline for Circuit 1
+      // $scope.circuit_1_underline = true;
+      // $scope.circuit_2_underline = false;
+      $scope.circuit2Underline = {
+        'background-color' :'transparent'
+        // TODO this isn't working. Console error says single quotes needed..?
+        //http://www.w3schools.com/angular/ng_ng-style.asp
+      };
     };
 
-    $scope.circuit_2 = function() {
+    $scope.circuit2 = function() {
       //when circuit2 is clicked, hide 1, show 2
       $scope.showCircuit1 = false;
       $scope.showCircuit2 = true;
+
+      //show underline for Circuit 2 tab
+      // $scope.circuit_2_underline = true;
+      // $scope.circuit_1_underline = false;
     };
 
     /**
