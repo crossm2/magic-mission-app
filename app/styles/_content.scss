@@ -34,6 +34,7 @@
     color: gray;
   }
 }
+
 .list {
   // padding for exercise list
   padding-left: 0;
@@ -41,15 +42,17 @@
   border-top: .5px solid $grey-dark;
   border-right: .5px solid $grey-dark;
   border-left: .5px solid $grey-dark;
-  -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
-  -moz-box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
-  box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
 
 }
+
 li {
   list-style-type: none;
   border-bottom: .5px solid $grey-dark;
 }
+
 .workout-item {
   font-size: 18px;
   font-weight: 200;
@@ -59,7 +62,7 @@ li {
 .next-box {
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   width: 50px;
   height: 100%;
 
@@ -67,6 +70,78 @@ li {
     background-color: $grey-hover;
   }
 }
+
+//Trying tabs
+.circuit-tab {
+  height: 50px;
+  display: flex;
+  justify-content: space-around; //TODO not working
+  align-items: center;
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: $indigo;
+
+    &:hover {
+      color: rgba($indigo, .5);
+    }
+  }
+}
+
+//.circuit-tab-test {
+//  height: 50px;
+//  display: flex;
+//  flex-direction: row;
+//  ul {
+//    li {
+//      display: flex;
+//      flex-direction: column;
+//      justify-content: center;
+//
+//      .circuit-link {
+//        text-decoration: none;
+//        font-weight: bold;
+//        color: $indigo;
+//      }
+//      .line {
+//        height: 4px;
+//        width: 90px;
+//        background-color: $indigo;
+//      }
+//    }
+//  }
+//}
+
+.circuit-tab-test {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  .circuit-tab-parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .circuit-tab {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .circuit-link {
+        padding-bottom:10px;
+      a {
+        text-decoration: none;
+        font-weight: bold;
+        color: $indigo;
+      }
+      }
+      .line {
+        height: 2px;
+        width: 90px;
+        background-color: $indigo;
+      }
+    }
+  }
+}
+
 
 //OLD CODE
 //.workout-container {
@@ -135,6 +210,6 @@ li {
 
 .circuit-exercises {
   li span {
-    font-weight:bold;
+    font-weight: bold;
   }
 }

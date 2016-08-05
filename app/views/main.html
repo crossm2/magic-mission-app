@@ -28,28 +28,47 @@
 
       <!--new code-->
       <div class="circuit-container">
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="circuit_1()">
-          Circuit 1
-        </button>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" ng-click="circuit_2()">
-          Circuit 2
-        </button>
+        <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-button&#45;&#45;colored" ng-click="circuit_1()">-->
+        <!--Circuit 1-->
+        <!--</button>-->
+        <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-button&#45;&#45;colored" ng-click="circuit_2()">-->
+        <!--Circuit 2-->
+        <!--</button>-->
         <!--Trying tabs-->
         <!--<div class="mdl-layout__tab-bar mdl-js-ripple-effect menu-tabs">-->
         <!--<a href="#scroll-tab-1" class="mdl-layout__tab is-active" ng-mouseenter="testClickFunction()">Circuit 1</a>-->
         <!--<a href="#scroll-tab-2" class="mdl-layout__tab">Circuit 2</a>-->
         <!--</div>-->
-      </div>
 
+        <!--<div class="circuit-tab">-->
+          <!--<div><a href="">CIRCUIT 1</a></div>-->
+          <!--<div><a href="">CIRCUIT 2</a></div>-->
+        <!--</div>-->
+
+        <div class="circuit-tab-test">
+          <div class="circuit-tab-parent">
+            <div class="circuit-tab" ng-click="circuit1()">
+              <div class="circuit-link"> <a href="">CIRCUIT 1</a></div>
+              <div class="line line-circuit-1" ng-style="circuit_1_underline"></div>
+            </div>
+            <div class="circuit-tab" ng-click="circuit2()">
+              <div class="circuit-link"> <a href="">CIRCUIT 2</a></div>
+              <div class="line line-circuit-2" ng-style="circuit2Underline"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+      <!--Trying tabs-->
+      <!--<div class="mdl-layout__tab-bar mdl-js-ripple-effect menu-tabs">-->
+      <!--<a href="#scroll-tab-1" class="mdl-layout__tab is-active" ng-mouseenter="testClickFunction()">Circuit 1</a>-->
+      <!--<a href="#scroll-tab-2" class="mdl-layout__tab">Circuit 2</a>-->
+      <!--</div>-->
 
       <div class="workout-container">
         <div class="workout">
 
-          <!--Trying tabs-->
-          <!--<div class="mdl-layout__tab-bar mdl-js-ripple-effect menu-tabs">-->
-          <!--<a href="#scroll-tab-1" class="mdl-layout__tab is-active" ng-mouseenter="testClickFunction()">Circuit 1</a>-->
-          <!--<a href="#scroll-tab-2" class="mdl-layout__tab">Circuit 2</a>-->
-          <!--</div>-->
 
           <!-- Circuit 1 -->
           <div class="circuit-1" ng-show="showCircuit1">
@@ -78,17 +97,17 @@
                 <div class="workout-visual" ng-show="showDemo">
                   <img src="images/demo-placeholder.jpg">
                   <!--<ul class="circuit-exercises">-->
-                    <!--<li><span>Equipment:</span> {{data.Exercises.Exercise1.Equipment}}</li>-->
-                    <!--<li><span>Weight Range:</span> {{data.Exercises.Exercise1.WeightRange}}</li>-->
-                    <!--<li><span>Sets:</span> {{data.Exercises.Exercise1.Sets}}</li>-->
-                    <!--<li><span>Time:</span> {{data.Exercises.Exercise1.Time}}</li>-->
-                    <!--<li><span>Reps:</span> {{data.Exercises.Exercise1.Reps}}</li>-->
-                    <!--<li><span>Section:</span> {{data.Exercises.Exercise1.Section}}</li>-->
-                    <!--<li><span>Body Parts:</span> {{data.Exercises.Exercise1.BodyParts}}</li>-->
-                    <!--<li><span>Steps:</span> {{data.Exercises.Exercise1.Steps[0].step}}</li>-->
-                    <!--<li> {{data.Exercises.Exercise1.Steps[1].step}}</li>-->
-                    <!--<li> {{data.Exercises.Exercise1.Steps[2].step}}</li>-->
-                    <!--<li><span>Modifications:</span> {{data.Exercises.Exercise1.MODS}}</li>-->
+                  <!--<li><span>Equipment:</span> {{data.Exercises.Exercise1.Equipment}}</li>-->
+                  <!--<li><span>Weight Range:</span> {{data.Exercises.Exercise1.WeightRange}}</li>-->
+                  <!--<li><span>Sets:</span> {{data.Exercises.Exercise1.Sets}}</li>-->
+                  <!--<li><span>Time:</span> {{data.Exercises.Exercise1.Time}}</li>-->
+                  <!--<li><span>Reps:</span> {{data.Exercises.Exercise1.Reps}}</li>-->
+                  <!--<li><span>Section:</span> {{data.Exercises.Exercise1.Section}}</li>-->
+                  <!--<li><span>Body Parts:</span> {{data.Exercises.Exercise1.BodyParts}}</li>-->
+                  <!--<li><span>Steps:</span> {{data.Exercises.Exercise1.Steps[0].step}}</li>-->
+                  <!--<li> {{data.Exercises.Exercise1.Steps[1].step}}</li>-->
+                  <!--<li> {{data.Exercises.Exercise1.Steps[2].step}}</li>-->
+                  <!--<li><span>Modifications:</span> {{data.Exercises.Exercise1.MODS}}</li>-->
 
                   <!--</ul>-->
                 </div>
