@@ -1,3 +1,28 @@
+//Navbar
+.navbar {
+  a:nth-child(-n+3):hover {
+    background: $dark-indigo;
+  }
+  .login-btn {
+    height: 40px;
+    width: 80px;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    border: 2px solid white;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius: 5px;
+
+    &:hover {
+      background: white;
+      color: $indigo;
+    }
+  }
+
+}
+
+//Workout section
 .workout-container {
   width: 400px;
   margin: 0 auto;
@@ -127,12 +152,12 @@ li {
       justify-content: center;
 
       .circuit-link {
-        padding-bottom:10px;
-      a {
-        text-decoration: none;
-        font-weight: bold;
-        color: $indigo;
-      }
+        padding-bottom: 10px;
+        a {
+          text-decoration: none;
+          font-weight: bold;
+          color: $indigo;
+        }
       }
       .line {
         height: 2px;
@@ -142,7 +167,6 @@ li {
     }
   }
 }
-
 
 //OLD CODE
 //.workout-container {
