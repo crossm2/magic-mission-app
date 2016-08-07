@@ -1,3 +1,9 @@
+body {
+  background: $grey-light;
+}
+//.container {
+//  margin: 0 auto;
+//}
 //Navbar
 .navbar {
   a:nth-child(-n+3):hover {
@@ -184,7 +190,16 @@ li {
 }
 
 //Browse page
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .workout-card {
+  margin: 7px;
+  h4 {
+    margin-top:7px;
+  }
   p {
     margin-bottom: 0;
     font-weight: 200;
