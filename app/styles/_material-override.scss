@@ -16,7 +16,9 @@ I added specificity to the Li's p elements
 }
 
 
+
 //Material components, originally in html, moved here
+//For cards in Browse:
 .demo-card-event.mdl-card {
   width: 256px;
   height: 256px;
@@ -44,3 +46,15 @@ I added specificity to the Li's p elements
 .demo-card-event > .mdl-card__actions > .mdl-button {
   color: #fff;
 }
+
+//For card in About:
+ .demo-card-square.mdl-card {
+   width: 320px;
+   height: 320px;
+ }
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+}
+
