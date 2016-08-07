@@ -1,3 +1,9 @@
+@mixin box-shadow {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
 body {
   background: $grey-light;
 }
@@ -73,10 +79,7 @@ body {
   border-top: .5px solid $grey-dark;
   border-right: .5px solid $grey-dark;
   border-left: .5px solid $grey-dark;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
-
+  @include box-shadow;
 }
 
 li {
@@ -203,4 +206,52 @@ li {
     margin-bottom: 0;
     font-weight: 200;
   }
+}
+
+
+// About page
+// trying cards
+.about-card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about-card {
+  @include box-shadow;
+  margin: 7px;
+  width: 300px;
+  background-color: $blue-grey-500;
+  //height: 225px;
+  padding: 15px;
+  //TODO pick random color from list
+  color: white;
+  display: flex;
+  flex-direction: column;
+  h5 {
+    font-weight: 100;
+  }
+  p {
+    color: white;
+    font-weight: 100;
+  }
+  //&:nth-child(1) {
+  //  //background: $pink-700;
+  //  background: $blue-grey-500;
+  //
+  //}
+  //&:nth-child(2) {
+  //  background: $blue-grey-500;
+  //}
+  //&:nth-child(3) {
+  //  background: $indigo-900;
+  //}
+  //&:nth-child(4) {
+  //  background: $cyan-700;
+  //}
+}
+
+// Trying list
+.about-list li {
+  width: 400px;
+  min-height: 200px;
 }
