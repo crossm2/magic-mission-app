@@ -168,62 +168,6 @@ li {
   }
 }
 
-//OLD CODE
-//.workout-container {
-//  width: 400px;
-//  margin: 0 auto;
-//  .workout-item {
-//    display: flex;
-//    justify-content: space-between;
-//    align-items: center;
-//    height: 50px;
-//    padding-left: 15px;
-//  }
-//  .workout-item:hover {
-//    background-color: #3F51B5;
-//    color: white;
-//    //TODO mixin that removes 'mdl-button--colored'
-//  }
-//  p {
-//    font-size: 16px;
-//    font-weight: 200;
-//  }
-//}
-
-// Today's Workout
-//.workout {
-//  .circuit-container {
-//    display: flex;
-//    flex-direction: row;
-//    justify-content: space-around;
-//    h4 {
-//      color: gray;
-//    }
-//  }
-//  li {
-//    list-style-type: none;
-//  }
-//  .workout-item {
-//    font-size: 18px;
-//    font-weight: 200;
-//    height: 50px;
-//  }
-//  //li:hover {
-//  //  //display: block;
-//  //  background-color: gray;
-//  //  color: white;
-//  //TODO scss lnking not working; variables not working
-//  //background-color: $light-indigo;
-//  li:nth-child(odd) {
-//    background-color: #E8EAF6;
-//  }
-//
-//  .workout-visual {
-//    margin-bottom: 5px;
-//  }
-//
-//}
-
 .start-button {
   display: flex;
   justify-content: center;
@@ -236,5 +180,13 @@ li {
 .circuit-exercises {
   li span {
     font-weight: bold;
+  }
+}
+
+//Browse page
+.workout-card {
+  p {
+    margin-bottom: 0;
+    font-weight: 200;
   }
 }
