@@ -6,6 +6,7 @@
  * # LoginCtrl
  * Manages authentication to any active providers.
  */
+
 angular.module('magicMissionAppApp')
   .controller('LoginCtrl', function ($scope, Auth, $location, $q, Ref, $timeout) {
     $scope.oauthLogin = function(provider) {
@@ -70,7 +71,7 @@ angular.module('magicMissionAppApp')
       return f + str.substr(1);
     }
 
-  
+
 
     function redirect() {
       $location.path('/account');
