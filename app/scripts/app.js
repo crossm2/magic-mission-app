@@ -24,16 +24,6 @@
 
    .constant('FIREBASE_URL', 'https://magic-muscle-mission.firebaseio.com/');
 
- /*  myApp.run(['$rootScope', '$location',
-     function($rootScope, $location) {
-       $rootScope.$on('$routeChangeError',
-         function(event, next, previous, error) {
-           if(error='AUTH_REQUIRED') {
-             $rootScope.message = 'Sorry, you must log in to access that page';
-             $location.path('/login');
-           }//AUTH REQUIRED
-         });//event info
-     }]);//run*/
 
    myApp.config(function ($routeProvider) {
      $routeProvider
@@ -64,6 +54,16 @@
          templateUrl: 'views/account.html',
          controller: 'accountCtrl',
          controllerAs: 'account'
+       })
+       .when('/about', {
+         templateUrl: 'views/about.html',
+         controller: 'AboutCtrl',
+         controllerAs: 'about'
+       })
+       .when('/browse', {
+         templateUrl: 'views/browse.html',
+         controller: 'BrowseCtrl',
+         controllerAs: 'browse'
        })
        .otherwise({
          redirectTo: '/'

@@ -1,70 +1,179 @@
-body {
-  //background-image: url('../images/Shoe_tie.jpg');
-  //-webkit-background-size: contain;
-  //background-size: contain;
+@mixin box-shadow {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
 }
 
-//.background-photo {
-//  position: relative;
-//  width: 100%;
-//  img {
-//    position: absolute;
-//  }
+body {
+  background: $grey-light;
+}
+//.container {
+//  margin: 0 auto;
 //}
+//Navbar
+.navbar {
+  a:nth-child(-n+3):hover {
+    background: $dark-indigo;
+  }
+  .login-btn {
+    height: 40px;
+    width: 80px;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    border: 2px solid white;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius: 5px;
 
+    &:hover {
+      background: white;
+      color: $indigo;
+    }
+  }
+
+}
+
+//Workout section
 .workout-container {
   width: 400px;
   margin: 0 auto;
-  .workout-item {
+  .workout-parent {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .workout-item {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
     height: 50px;
     padding-left: 15px;
-  }
-  .workout-item:hover {
-    background-color: #3F51B5;
-    color: white;
-    //TODO mixin that removes 'mdl-button--colored'
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    transition: all .1s ease-in-out;
+
+    &:hover {
+      background-color: $grey-hover;
+    }
   }
   p {
-    font-size: 16px;
-    font-weight: 200;
+    font-size: 14px;
+    font-weight: 400;
   }
 }
 
-// Today's Workout
-.workout {
-  .circuit-container {
+.circuit-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  h4 {
+    color: gray;
+  }
+}
+
+.list {
+  // padding for exercise list
+  padding-left: 0;
+  //Created 3 sided border for parent, children have bottom borders
+  border-top: .5px solid $grey-dark;
+  border-right: .5px solid $grey-dark;
+  border-left: .5px solid $grey-dark;
+  @include box-shadow;
+}
+
+li {
+  list-style-type: none;
+  border-bottom: .5px solid $grey-dark;
+}
+
+.workout-item {
+  font-size: 18px;
+  font-weight: 200;
+  height: 50px;
+}
+
+.next-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 100%;
+
+  &:hover {
+    background-color: $grey-hover;
+  }
+}
+
+//Trying tabs
+.circuit-tab {
+  height: 50px;
+  display: flex;
+  justify-content: space-around; //TODO not working
+  align-items: center;
+  a {
+    text-decoration: none;
+    font-weight: bold;
+    color: $indigo;
+
+    &:hover {
+      color: rgba($indigo, .5);
+    }
+  }
+}
+
+//.circuit-tab-test {
+//  height: 50px;
+//  display: flex;
+//  flex-direction: row;
+//  ul {
+//    li {
+//      display: flex;
+//      flex-direction: column;
+//      justify-content: center;
+//
+//      .circuit-link {
+//        text-decoration: none;
+//        font-weight: bold;
+//        color: $indigo;
+//      }
+//      .line {
+//        height: 4px;
+//        width: 90px;
+//        background-color: $indigo;
+//      }
+//    }
+//  }
+//}
+
+.circuit-tab-test {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  .circuit-tab-parent {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    h4 {
-      color: gray;
+    .circuit-tab {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .circuit-link {
+        padding-bottom: 10px;
+        a {
+          text-decoration: none;
+          font-weight: bold;
+          color: $indigo;
+        }
+      }
+      .line {
+        height: 2px;
+        width: 90px;
+        background-color: $indigo;
+      }
     }
   }
-  li {
-    list-style-type: none;
-  }
-  .workout-item {
-    font-size: 18px;
-    font-weight: 200;
-    height: 50px;
-  }
-  //li:hover {
-  //  //display: block;
-  //  background-color: gray;
-  //  color: white;
-  //TODO scss lnking not working; variables not working
-  //background-color: $light-indigo;
-  li:nth-child(odd) {
-    background-color: #E8EAF6;
-  }
-
-  .workout-visual {
-    margin-bottom: 5px;
-  }
-
 }
 
 .start-button {
@@ -78,6 +187,71 @@ body {
 
 .circuit-exercises {
   li span {
-    font-weight:bold;
+    font-weight: bold;
   }
+}
+
+//Browse page
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.workout-card {
+  margin: 7px;
+  h4 {
+    margin-top:7px;
+  }
+  p {
+    margin-bottom: 0;
+    font-weight: 200;
+  }
+}
+
+
+// About page
+// trying cards
+.about-card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.about-card {
+  @include box-shadow;
+  margin: 7px;
+  width: 300px;
+  background-color: $blue-grey-500;
+  //height: 225px;
+  padding: 15px;
+  //TODO pick random color from list
+  color: white;
+  display: flex;
+  flex-direction: column;
+  h5 {
+    font-weight: 100;
+  }
+  p {
+    color: white;
+    font-weight: 100;
+  }
+  //&:nth-child(1) {
+  //  //background: $pink-700;
+  //  background: $blue-grey-500;
+  //
+  //}
+  //&:nth-child(2) {
+  //  background: $blue-grey-500;
+  //}
+  //&:nth-child(3) {
+  //  background: $indigo-900;
+  //}
+  //&:nth-child(4) {
+  //  background: $cyan-700;
+  //}
+}
+
+// Trying list
+.about-list li {
+  width: 400px;
+  min-height: 200px;
 }

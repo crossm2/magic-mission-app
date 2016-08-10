@@ -7,8 +7,26 @@
  * Manages authentication to any active providers.
  */
 
-angular.module('magicMissionAppApp')
-  .controller('LoginCtrl', function ($scope, Auth, $location, $q, Ref, $timeout) {
+var app = angular.module('magicMissionAppApp')
+
+app.factory("Auth", function($firebaseAuth){
+  var ref = new Firebase("https://magic-muscle-mission.firebaseio.com");
+  return $firebaseAuth(ref);
+});
+  app.controller('LoginCtrl', function ($scope, Auth, $location, $q, Ref, $timeout) {
+
+  //  var ref = new Firebase("https://magic-muscle-mission.firebaseio.com");
+  //   Ref.authWithCustomToken().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  //     email:"marlie@firebase.com",
+  //     password:"password",
+  //   // Handle Errors here.
+  //   var errorCode = error.code;
+  //   var errorMessage = error.message;
+  //   // ...
+  // });
+
+
+
     $scope.oauthLogin = function(provider) {
       $scope.err = null;
       Auth.$authWithOAuthPopup(provider, {rememberMe: true}).then(redirect, showError);
@@ -18,14 +36,28 @@ angular.module('magicMissionAppApp')
       $scope.err = null;
       Auth.$authAnonymously({rememberMe: true}).then(redirect, showError);
     };
-
+ $scope.testPassword = function()
+{
+  var ref = new Firebase("https://magic-muscle-mission.firebaseio.com");
+ref.authWithPassword({
+  email    : "bobtony@firebase.com",
+  password : "correcthorsebatterystaple"
+}, function(error, authData) {
+  if (error) {
+    console.log("Login Failed!", error);
+  } else {
+    console.log("Authenticated successfully with payload:", authData);
+  }
+});
+};
     $scope.passwordLogin = function(email, pass) {
       $scope.err = null;
+      debugger;
       Auth.$authWithPassword({email: email, password: pass}, {rememberMe: true}).then(
         redirect, showError
       );
     };
-
+//createAccount("marlie@firebase.com","snickers","snickers")
     $scope.createAccount = function(email, pass, confirm) {
       $scope.err = null;
       if( !pass ) {
@@ -35,9 +67,13 @@ angular.module('magicMissionAppApp')
         $scope.err = 'Passwords do not match';
       }
       else {
+        console.log("this passed");
+        console.log(email);
+        console.log(pass);
         Auth.$createUser({email: email, password: pass})
           .then(function () {
             // authenticate so we have permission to write to Firebase
+
             return Auth.$authWithPassword({email: email, password: pass}, {rememberMe: true});
           })
           .then(createProfile)

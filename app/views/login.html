@@ -11,7 +11,7 @@
   </p>
 </fieldset>
 
-<form role="form">
+<form role="form" novalidate>
   <p class="form-group">
     <label for="loginEmail">email</label>
     <input id="loginEmail" required name="email" type="email" ng-model="email" />
@@ -26,7 +26,7 @@
   </p>
 
   <p>
-    <button  ng-click="passwordLogin(email, pass)" ng-hide="createMode">Log In</button>
+    <button  ng-click="testPassword()" ng-hide="createMode">Log In</button>
     <button  ng-click="createMode = true" ng-hide="createMode">Register</button>
     <button  ng-cloak ng-show="createMode"
             ng-click="createAccount(email, pass, confirm)">Create Account</button>
@@ -34,4 +34,3 @@
   </p>
 </form>
 <p ng-show="err" class="error">{{err}}</p>
-

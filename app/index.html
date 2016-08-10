@@ -56,8 +56,9 @@
           <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
             <a class="mdl-navigation__link" href="#/">Workout</a>
-            <a class="mdl-navigation__link" href="">Browse</a>
             <a class="mdl-navigation__link" href="">Favorties</a>
+            <a class="mdl-navigation__link" href="#/browse">Browse</a>
+            <a class="mdl-navigation__link" href="#/about">About</a>
             <a class="mdl-navigation__link" ng-hide-auth="" href="#/login">log in</a>
             <a class="mdl-navigation__link" ng-show-auth="" href="#/account">account</a>
           </li>
@@ -67,9 +68,9 @@
       <div class="mdl-layout__drawer">
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="#/">Workout</a>
+          <a class="mdl-navigation__link" href="#/browse">Browse</a>
+          <a class="mdl-navigation__link" href="#/about">About</a>
           <a class="mdl-navigation__link" href="">Link</a>
         </nav>
       </div>
@@ -128,6 +129,8 @@
         <script src="scripts/controllers/myroute.js"></script>
         <script src="scripts/controllers/user.js"></script>
         <script src="scripts/services/myservice.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <script src="scripts/controllers/browse.js"></script>
         <!-- endbuild -->
 
 
