@@ -55,16 +55,19 @@
          controller: 'accountCtrl',
          controllerAs: 'account'
        })
+
        .when('/about', {
          templateUrl: 'views/about.html',
          controller: 'AboutCtrl',
          controllerAs: 'about'
        })
+
        .when('/browse', {
          templateUrl: 'views/browse.html',
          controller: 'BrowseCtrl',
          controllerAs: 'browse'
        })
+
        .otherwise({
          redirectTo: '/'
        });
