@@ -1,12 +1,34 @@
-<!doctype html> <html class="no-js"> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/main.css">  <body ng-app="magicMissionAppApp"> <!--[if lt IE 7]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-  your browser</a> to improve your experience.</p>
-<![endif]--> <!-- Add your site or application content here --> <div class="container"> <div ng-view=""></div> </div> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>!function (A, n, g, u, l, a, r) {
-    A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
-        (A[l].q = A[l].q || []).push(arguments)
-      }, A[l].l = +new Date, a = n.createElement(g),
-      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
-  }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+<!doctype html> <html class="no-js"> <head> <meta charset="utf-8"> <title></title> <meta name="description" content=""> <meta name="viewport" content="width=device-width"> <!-- Place favicon.ico and apple-touch-icon.png in the root directory --> <link rel="stylesheet" href="styles/vendor.f3899da5.css"> <link rel="stylesheet" href="styles/main.1bf751fd.css">  <body ng-app="magicMissionAppApp"> <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]--> <!-- Add your site or application content here --> <!--  <div class="header" ng-cloak="">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
 
-  ga('create', 'UA-XXXXX-X');
-  ga('send', 'pageview');</script> <script src="scripts/vendor.3e86a83a.js"></script> <script src="scripts/scripts.c8422034.js"></script> <!-- Firebase --> <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script> <!-- AngularFire --> <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>  
+            <a class="navbar-brand" href="#/">magicMission</a>
+          </div>
+
+          <div class="collapse">
+
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#/">Home</a></li> --> <!-- //angularfire --> <!--            <li><a ng-href="#/chat">chat</a></li>
+              <li>
+              <a ng-hide-auth="" href="#/login">log in</a>
+              <a ng-show-auth="" href="#/account">account</a>
+            </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> --> <!-- Always shows a header, even in smaller screens. --> <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> <header class="mdl-layout__header"> <div class="mdl-layout__header-row"> <!-- Title --> <span class="mdl-layout-title">Magic Muscle Mission!</span> <!-- Add spacer, to align navigation to the right --> <div class="mdl-layout-spacer"></div> <!-- Navigation. We hide it in small screens. --> <nav class="mdl-navigation mdl-layout--large-screen-only"> <a class="mdl-navigation__link" href="#/">Workout</a> <a class="mdl-navigation__link" href="">Favorties</a> <a class="mdl-navigation__link" href="#/browse">Browse</a> <a class="mdl-navigation__link" href="#/about">About</a> <a class="mdl-navigation__link" ng-hide-auth="" href="#/login">log in</a> <a class="mdl-navigation__link" ng-show-auth="" href="#/account">account</a>  </nav> </div> </header> <div class="mdl-layout__drawer"> <span class="mdl-layout-title">Title</span> <nav class="mdl-navigation"> <a class="mdl-navigation__link" href="#/">Workout</a> <a class="mdl-navigation__link" href="#/browse">Browse</a> <a class="mdl-navigation__link" href="#/about">About</a> <a class="mdl-navigation__link" href="">Link</a> </nav> </div> <div class="container"> <div ng-view=""></div> </div> <!--  <div class="footer">
+      <div class="container">
+        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team and Firebase</p>
+      </div>
+    </div> --> <!-- Google Analytics: change UA-XXXXX-X to be your site's ID --> <script>!function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');</script> <script src="scripts/vendor.js"></script> <script src="scripts/scripts.js"></script> <!-- Firebase --> <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script> <!-- AngularFire --> <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script> </div> 
