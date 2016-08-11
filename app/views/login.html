@@ -1,36 +1,87 @@
+<div class="login-container-parent">
+  <div class="login-container">
+    <h2>Login Page</h2>
 
-<h2>Login Page</h2>
+    <fieldset>
+      <legend>Oauth</legend>
 
-<fieldset>
-  <legend>Oauth</legend>
-  <p>
-    <button  ng-click="anonymousLogin()">Anonymous</button>
-    <button  ng-click="oauthLogin('facebook')">Facebook</button>
-    <button  ng-click="oauthLogin('google')">Google</button>
-    <button  ng-click="oauthLogin('twitter')">Twitter</button>
-  </p>
-</fieldset>
+      <!--Google login. MDL button makes text caps. Other opt is div, with on-click event.-->
+      <!--<button class="google-login mdl-button mdl-js-button">-->
+      <div class="google-login">
+        <div class="google-icon"><img src="../images/google_color.png"></div>
+        <p>Log in with Google</p>
+      </div>
+      <!--</button>-->
 
-<form role="form" novalidate>
-  <p class="form-group">
-    <label for="loginEmail">email</label>
-    <input id="loginEmail" required name="email" type="email" ng-model="email" />
-  </p>
-  <p class="form-group">
-    <label for="loginPass">password</label>
-    <input id="loginPass" required name="pass" type="password" ng-model="pass" />
-  </p>
-  <p class="form-group" ng-cloak ng-show="createMode">
-    <label for="loginConfirm">confirm pass</label>
-    <input id="loginConfirm" required name="confirm" type="password" ng-model="confirm" />
-  </p>
+      <p>
+        <button ng-click="anonymousLogin()">Anonymous</button>
+        <button ng-click="oauthLogin('facebook')">Facebook</button>
+        <button ng-click="oauthLogin('google')">Google</button>
+        <button ng-click="oauthLogin('twitter')">Twitter</button>
+      </p>
+    </fieldset>
 
-  <p>
-    <button  ng-click="testPassword()" ng-hide="createMode">Log In</button>
-    <button  ng-click="createMode = true" ng-hide="createMode">Register</button>
-    <button  ng-cloak ng-show="createMode"
-            ng-click="createAccount(email, pass, confirm)">Create Account</button>
-    <button  ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>
-  </p>
-</form>
-<p ng-show="err" class="error">{{err}}</p>
+    <form role="form" novalidate>
+      <p class="form-group">
+        <!--<label for="loginEmail">email</label>-->
+        <input id="loginEmail" class="login-form" required name="email" type="email" ng-model="email"
+               placeholder="Email"/>
+      </p>
+      <p class="form-group">
+        <!--<label for="loginPass">password</label>-->
+        <input id="loginPass" class="login-form" required name="pass" type="password" ng-model="pass"
+               placeholder="Password"/>
+      </p>
+      <p class="form-group" ng-cloak ng-show="createMode">
+        <label for="loginConfirm">confirm pass</label>
+        <input id="loginConfirm" required name="confirm" type="password" ng-model="confirm"/>
+      </p>
+
+      <p>
+        <!-- Login -->
+        <!--<button  ng-click="testPassword()" ng-hide="createMode">Log In</button>-->
+        <!-- Log in button-->
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                ng-click="testPassword()" ng-hide="createMode">
+          Log In
+        </button>
+
+        <!-- Sign Up -->
+        <!--<button ng-click="createMode = true" ng-hide="createMode">Register</button>-->
+        <!-- Sign Up button -->
+        <!--<button class="mdl-button mdl-js-button" ng-click="createMode = true" ng-hide="createMode">-->
+        <!--Sign Up-->
+        <!--</button>-->
+
+        <!-- Create Account button-->
+        <!--<button ng-cloak ng-show="createMode"-->
+        <!--ng-click="createAccount(email, pass, confirm)">Create Account-->
+        <!--</button>-->
+        <!-- Colored raised button -->
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+                ng-cloak ng-show="createMode" ng-click="createAccount(email, pass, confirm)">
+          Create Account
+        </button>
+
+        <!-- Cancel create acct-->
+        <!--<button ng-cloak ng-show="createMode" ng-click="createMode = false">Cancel</button>-->
+        <!-- Raised button -->
+        <button class="mdl-button mdl-js-button mdl-button--raised"
+                ng-cloak ng-show="createMode" ng-click="createMode = false">
+          Cancel
+        </button>
+
+      </p>
+    </form>
+
+    <div class="signup-idea">
+      <p>Need an account?</p>
+      <!--TODO change this btn to link, that goes to new Sign Up page-->
+      <button class="mdl-button mdl-js-button" ng-click="createMode = true" ng-hide="createMode">
+        Sign Up
+      </button>
+    </div>
+
+    <p ng-show="err" class="error">{{err}}</p>
+  </div>
+</div>
