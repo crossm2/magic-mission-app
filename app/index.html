@@ -16,9 +16,27 @@
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
 
 </head>
 <body ng-app="magicMissionAppApp">
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1149221148476641',
+      xfbml      : true,
+      version    : 'v2.7'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
@@ -30,14 +48,24 @@
         <div class="mdl-layout__header-row">
           <!-- Title -->
           <span class="mdl-layout-title">Magic Muscle Mission!</span>
+          <div
+            class="fb-like"
+            data-share="true"
+            data-width="450"
+            data-show-faces="true">
+          </div>
           <!-- Add spacer, to align navigation to the right -->
           <div class="mdl-layout-spacer"></div>
           <!-- Navigation. We hide it in small screens. -->
           <nav class="mdl-navigation mdl-layout--large-screen-only">
             <a class="mdl-navigation__link" href="#/">Workout</a>
             <a class="mdl-navigation__link" href="">Favorties</a>
-            <a class="mdl-navigation__link" href="#/browse">Browse</a>
+            <!--<a class="mdl-navigation__link" href="#/browse">Browse</a>-->
             <a class="mdl-navigation__link" href="#/about">About</a>
+            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+            </fb:login-button>
+            <div id="status">
+            </div>
             <a class="mdl-navigation__link" ng-hide-auth="" href="#/login">log in</a>
             <a class="mdl-navigation__link" ng-show-auth="" href="#/account">account</a>
           </li>
@@ -48,7 +76,7 @@
         <span class="mdl-layout-title">Title</span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="#/">Workout</a>
-          <a class="mdl-navigation__link" href="#/browse">Browse</a>
+          <!--<a class="mdl-navigation__link" href="#/browse">Browse</a>-->
           <a class="mdl-navigation__link" href="#/about">About</a>
           <a class="mdl-navigation__link" href="">Link</a>
         </nav>
