@@ -5,7 +5,7 @@
 }
 
 body {
-  background: $grey-light;
+  background: $grey-50;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -80,15 +80,15 @@ body {
   // padding for exercise list
   padding-left: 0;
   //Created 3 sided border for parent, children have bottom borders
-  border-top: .5px solid $grey-dark;
-  border-right: .5px solid $grey-dark;
-  border-left: .5px solid $grey-dark;
+  border-top: .5px solid $grey-300;
+  border-right: .5px solid $grey-300;
+  border-left: .5px solid $grey-300;
   @include box-shadow;
 }
 
 li {
   list-style-type: none;
-  border-bottom: .5px solid $grey-dark;
+  border-bottom: .5px solid $grey-300;
 }
 
 .workout-item {
@@ -201,20 +201,20 @@ li {
   display: flex;
   justify-content: center;
 }
-.google-login {
+.login-third-party {
   display: flex;
   flex-direction:row;
   width: 300px;
-  background: $light-indigo;
+  //background: $light-indigo;
   height: 45px;
   margin-right: 0;
 
-  //border: 1px solid gray;
-  -webkit-border-radius:4px;
-  -moz-border-radius:4px;
-  border-radius: 4px;
+  border: 1px solid $grey-300;
+  -webkit-border-radius:2px;
+  -moz-border-radius:2px;
+  border-radius: 2px;
 
-  .google-icon {
+  .login-icons {
     display: flex;
     align-items:center;
     margin-right: 5px;
@@ -226,6 +226,41 @@ li {
     margin-bottom: 0%;
   }
 }
+// Specific styling for Facebook login
+.third-party div:nth-child(2) {
+  background-color: $facebook;
+  .login-icons {
+    display: flex;
+    align-items:center;
+  }
+}
+////These are
+//.fb-login{
+//  display: flex;
+//  flex-direction:row;
+//  width: 300px;
+//  background: $facebook;
+//  height: 45px;
+//  margin-right: 0;
+//  color: white;
+//  //border: 1px solid gray;
+//  -webkit-border-radius:4px;
+//  -moz-border-radius:4px;
+//  border-radius: 4px;
+//
+//  .fb-icon {
+//    display: flex;
+//    align-items:center;
+//    margin-right: 16px;
+//    margin-left: 15px;
+//  }
+//  p {
+//    display: flex;
+//    align-items:center;
+//    margin-bottom: 0%;
+//  }
+//}
+
 
 // Input fields
 .login-form {
