@@ -5,16 +5,15 @@
     <fieldset>
       <legend>Oauth</legend>
 
-      <!--Google login. MDL button makes text caps. Other opt is div, with on-click event.-->
-      <!--<button class="google-login mdl-button mdl-js-button">-->
-      <div class="third-party">
+      <!--Google login-->
+      <div class="third-party" ng-click="oauthLogin('google')">
         <div class="login-third-party">
           <div class="login-icons"><img src="../images/google_color.png"></div>
           <p>Log in with Google</p>
         </div>
-        <!--</button>-->
 
-        <div class="long-third-party">
+        <!--Facebook login-->
+        <div class="login-third-party" ng-click="oauthLogin('facebook')">
           <div class="login-icons"><img src="../images/fb_whiteF.png"></div>
           <p>Log in with Facebook</p>
         </div>
@@ -82,7 +81,7 @@
     </form>
 
     <div class="signup-idea">
-      <p>Need an account?</p>
+      <p>Don't have an account?</p>
       <!--TODO change this btn to link, that goes to new Sign Up page-->
       <button class="mdl-button mdl-js-button" ng-click="createMode = true" ng-hide="createMode">
         Sign Up
