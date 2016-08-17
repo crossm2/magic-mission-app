@@ -23,23 +23,25 @@
     $scope.showCircuit1 = true;
     $scope.showCircuit2 = false;
 
-    //Set visibility for tab underline
-    // $scope.circuit_1_underline = true;
-    // $scope.circuit_2_underline = false;
+    //Set visibility for underline on Circuit 2
+    $scope.circuit2Underline = {
+      'background-color': 'transparent'
+    };
 
 
     $scope.circuit1= function() {
       //when button for circuit1 is clicked, hide cir2, show cir1
       $scope.showCircuit1 = true;
       $scope.showCircuit2 = false;
+      console.log('cir1 function run');
 
-      //show underline for Circuit 1
-      // $scope.circuit_1_underline = true;
-      // $scope.circuit_2_underline = false;
+      //TODO this is the slow way. should have a toggle in HTML
+      // Show underline under active Circuit
       $scope.circuit2Underline = {
-        'background-color' :'transparent'
-        // TODO this isn't working. Console error says single quotes needed..?
-        //http://www.w3schools.com/angular/ng_ng-style.asp
+        'background-color': 'transparent'
+      };
+      $scope.circuit1Underline = {
+        'background-color': '$indigo'
       };
     };
 
@@ -48,9 +50,13 @@
       $scope.showCircuit1 = false;
       $scope.showCircuit2 = true;
 
-      //show underline for Circuit 2 tab
-      // $scope.circuit_2_underline = true;
-      // $scope.circuit_1_underline = false;
+      // Show underline under active Circuit
+      $scope.circuit2Underline = {
+        'background-color': '$indigo'
+      };
+      $scope.circuit1Underline = {
+        'background-color': 'transparent'
+      };
     };
 
     /**
