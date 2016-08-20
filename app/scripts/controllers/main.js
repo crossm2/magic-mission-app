@@ -28,6 +28,9 @@
     var coreWorkout = [];
     var upperWorkout = [];
     var lowerWorkout = [];
+    var wholeBody = [];
+    var recovery = [];
+
     var todaysWorkout = [];
     var circuitOneArray = [];
     var circuitTwoArray = [];
@@ -40,7 +43,7 @@
         // console.log(newPost[i].Title);
         exercisesDatabase.push(newPost[i]);
       }
-      //Fill arrays for Upper, Lower, Core
+      //Fill arrays for Upper, Lower, Core, Whole body
       for (var exerciseKey in exercisesDatabase) {
         if (exercisesDatabase[exerciseKey].Section === 'Core') {
           coreWorkout.push(exercisesDatabase[exerciseKey]);
@@ -51,27 +54,69 @@
         else if (exercisesDatabase[exerciseKey].Section === 'Lower') {
           lowerWorkout.push(exercisesDatabase[exerciseKey]);
         }
+        else if (exercisesDatabase[exerciseKey].Section === 'Whole Body') {
+          wholeBody.push(exercisesDatabase[exerciseKey]);
+        }
+        else if (exercisesDatabase[exerciseKey].Section === 'Recovery') {
+          recovery.push(exercisesDatabase[exerciseKey]);
+        }
       }
 
-      // Create a Workout
-      // Loop 3x:
-      for (var k= 0; k < 3; k++) {
-        // pick random number between 1 and coreWorkout.length
-        var randomInt = Math.floor((Math.random() * coreWorkout.length));
+      /**
+       ** Create a Workout. 2 loops through each Section array.
+       */
+      // Loop through 2 times
+      for (var k= 0; k < 2; k++) {
 
-        // splice from array
-        var randomCore = coreWorkout.splice(randomInt,1);
-        // push to todaysWorkout
+        // Pick Core
+        var randomIntCore = Math.floor((Math.random() * coreWorkout.length));
+        // Splice from array
+        var randomCore = coreWorkout.splice(randomIntCore,1);
+        // Push to todaysWorkout
         todaysWorkout.push(randomCore);
-        console.log(todaysWorkout);
-        // console.log(coreWorkout.length);
-        // pick random from Lower
-        // pick random from Upper
+
+        // Pick Lower
+        var randomIntLower = Math.floor((Math.random() * lowerWorkout.length));
+        // Splice from array
+        var randomLower = lowerWorkout.splice(randomIntLower,1);
+        // Push to todaysWorkout
+        todaysWorkout.push(randomLower);
+
+        // Pick wholeBody
+        var randomIntWhole = Math.floor((Math.random() * wholeBody.length));
+        // Splice from array
+        var randomWholeBody = wholeBody.splice(randomIntWhole,1);
+        // Push to todaysWorkout
+        todaysWorkout.push(randomWholeBody);
+
+        // Pick recover
+        var randomIntRec = Math.floor((Math.random() * recovery.length));
+        // Splice from array
+        var randomRecovery = recovery.splice(randomIntRec,1);
+        // Push to todaysWorkout
+        todaysWorkout.push(randomRecovery);
+        
 
       }
 
-      // Loop 1
-      // pick random from any
+      // Loop through Lower
+      // for (var l= 0; l < 2; l++) {
+      //   // Pick random number between 1 and array.length
+      //   var randomIntLower = Math.floor((Math.random() * lowerWorkout.length));
+      //
+      //   // splice from array
+      //   var randomLower = lowerWorkout.splice(randomIntLower,1);
+      //   // push to todaysWorkout
+      //   todaysWorkout.push(randomLower);
+      //   console.log(lowerWorkout[l].Title);
+      // }
+
+      // pick random from Upper
+
+      // pick random from wholebody
+      // pick random from recovery
+
+      // $scope.test = todaysWorkout.Title;
 
     });
 
