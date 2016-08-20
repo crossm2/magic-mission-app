@@ -24,28 +24,56 @@
      * Create a WOD based on Firebase data
      */
     //Arrays to hold exercise objects
+    var exercisesDatabase = [];
     var coreWorkout = [];
     var upperWorkout = [];
     var lowerWorkout = [];
+    var todaysWorkout = [];
+    var circuitOneArray = [];
+    var circuitTwoArray = [];
 
-  //loop through db
-  //   for (var i=0; i<30; i++) {
-  //     //search for 'core'
-  //     // $scope.data.Exercises.indexOf('Core');
-  //     //push to coreWorkout
-  //
-  //     if ($scope.data.Exercises[i].Section.indexOf('Core')) {
-  //       console.log(coreWorkout);
-  //       // coreWorkout.push($scope.data.Exercises[i]);
-  //     }
-  //   }
+    //Fetch all exercises, put into array exercisesDatabase
+    ref.on("child_added", function(snapshot, prevChildKey) {
+      var newPost = snapshot.val();
+      //Loop through each property of Exercises
+      for (var i in newPost) {
+        // console.log(newPost[i].Title);
+        exercisesDatabase.push(newPost[i]);
+      }
+      //Fill arrays for Upper, Lower, Core
+      for (var exerciseKey in exercisesDatabase) {
+        if (exercisesDatabase[exerciseKey].Section === 'Core') {
+          coreWorkout.push(exercisesDatabase[exerciseKey]);
+        }
+        else if (exercisesDatabase[exerciseKey].Section === 'Upper') {
+          upperWorkout.push(exercisesDatabase[exerciseKey]);
+        }
+        else if (exercisesDatabase[exerciseKey].Section === 'Lower') {
+          lowerWorkout.push(exercisesDatabase[exerciseKey]);
+        }
+      }
 
-    // console.log(coreWorkout);
+      // Create a Workout
+      // Loop 3x:
+      for (var k= 0; k < 3; k++) {
+        // pick random number between 1 and coreWorkout.length
+        var randomInt = Math.floor((Math.random() * coreWorkout.length));
 
-    // pull random objects from exercise array with Section: Core
-    // Loop through DB for length of DB, looking for Section Core
-    // Add each object to Array Workout
+        // splice from array
+        var randomCore = coreWorkout.splice(randomInt,1);
+        // push to todaysWorkout
+        todaysWorkout.push(randomCore);
+        console.log(todaysWorkout);
+        // console.log(coreWorkout.length);
+        // pick random from Lower
+        // pick random from Upper
 
+      }
+
+      // Loop 1
+      // pick random from any
+
+    });
 
 
 
