@@ -17,6 +17,11 @@
   <!--<div><a href="">CIRCUIT 2</a></div>-->
   <!--</div>-->
 
+  <ul class="testing-workout-creation">
+    <li></li>
+  </ul>
+
+
   <div class="circuit-tab-test">
     <div class="circuit-tab-parent">
       <div class="circuit-tab" ng-click="circuit1()">
@@ -42,6 +47,18 @@
   <div class="workout">
 
 
+
+    <h4>Testing with ng-repeat</h4>
+    <div>
+      <ul>
+        <li ng-repeat="item in workoutTest">{{ item.Title }}</li>
+      </ul>
+    </div>
+
+
+
+
+
     <!-- Circuit 1 -->
     <div class="circuit-1" ng-show="showCircuit1">
       <!--<h4>Circuit 1</h4>-->
@@ -51,8 +68,8 @@
         <li>
           <div class="workout-parent">
             <!--Workout Demo button-->
-            <div class="workout-item" ng-click="see_Demo()">
-              <div class=""><p>AngularExercise</p></div>
+            <div class="workout-item" ng-click="seeDemo()">
+              <div class=""><p>{{data.Exercises.Exercise7.Title}}</p></div>
             </div>
             <!--Next Workout button-->
             <!--<button class="mdl-button mdl-js-button mdl-button&#45;&#45;icon mdl-button&#45;&#45;colored"-->
@@ -67,20 +84,23 @@
 
           <!--Demo img, hidden-->
           <div class="workout-visual" ng-show="showDemo">
-            <img src="images/demo-placeholder.jpg">
+            <!--<img src="images/demo-placeholder.jpg">-->
+            <div class="gif-container">
+              <a href="https://imgflip.com/gif/197h9c"><img src="https://i.imgflip.com/197h9c.gif"
+                                                            title="made at imgflip.com"/></a>
+            </div>
             <ul class="circuit-exercises">
-            <li><span>Equipment:</span> {{data.Exercises.Exercise1.Equipment}}</li>
-            <li><span>Weight Range:</span> {{data.Exercises.Exercise1.WeightRange}}</li>
-            <li><span>Sets:</span> {{data.Exercises.Exercise1.Sets}}</li>
-            <li><span>Time:</span> {{data.Exercises.Exercise1.Time}}</li>
-            <li><span>Reps:</span> {{data.Exercises.Exercise1.Reps}}</li>
-            <li><span>Section:</span> {{data.Exercises.Exercise1.Section}}</li>
-            <li><span>Body Parts:</span> {{data.Exercises.Exercise1.BodyParts}}</li>
-            <li><span>Steps:</span> {{data.Exercises.Exercise1.Steps[0].step}}</li>
-            <li> {{data.Exercises.Exercise1.Steps[1].step}}</li>
-            <li> {{data.Exercises.Exercise1.Steps[2].step}}</li>
-            <li><span>Modifications:</span> {{data.Exercises.Exercise1.MODS}}</li>
-
+              <!--<li><span>Sets</span> {{data.Exercises.Exercise1.Sets}}</li>-->
+              <li><span>Reps</span> {{data.Exercises.Exercise1.Reps}}</li>
+              <li><span>Time</span> {{data.Exercises.Exercise1.Time}}</li>
+              <li><span>Steps</span> {{data.Exercises.Exercise1.Steps[0].step}}</li>
+              <li> {{data.Exercises.Exercise1.Steps[1].step}}</li>
+              <li> {{data.Exercises.Exercise1.Steps[2].step}}</li>
+              <li><span>Modifications</span> {{data.Exercises.Exercise1.MODS}}</li>
+              <li><span>Section</span> {{data.Exercises.Exercise1.Section}}</li>
+              <li><span>Body Parts</span> {{data.Exercises.Exercise1.BodyParts}}</li>
+              <li><span>Equipment</span> {{data.Exercises.Exercise1.Equipment}}</li>
+              <li><span>Weight Range</span> {{data.Exercises.Exercise1.WeightRange}}</li>
             </ul>
           </div>
         </li>
