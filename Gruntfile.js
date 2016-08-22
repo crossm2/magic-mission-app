@@ -775,7 +775,7 @@ module.exports = function (grunt) {
 
             'views/{,*/}*.html',
 
-            'images/{,*/}*.{webp}',
+            'images/{,*/}*.*',
 
             'styles/fonts/{,*/}*.*'
 
