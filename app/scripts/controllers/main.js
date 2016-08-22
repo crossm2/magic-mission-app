@@ -176,6 +176,10 @@
       console.log('clicked workout');
       // change toggle state for img
       $scope.showDemo = !$scope.showDemo;
+      //TODO change only this item's showDemo
+      
+      
+      
     };
 
 
