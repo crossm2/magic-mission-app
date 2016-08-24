@@ -22,19 +22,19 @@
   </ul>
 
 
-  <div class="circuit-tab-test">
-    <div class="circuit-tab-parent">
-      <div class="circuit-tab" ng-click="circuit1()">
-        <div class="circuit-link"><a href="">CIRCUIT 1</a></div>
-        <div class="line line-circuit-1" ng-style="circuit1Underline"></div>
-      </div>
-      <div class="circuit-tab" ng-click="circuit2()">
-        <div class="circuit-link"><a href="">CIRCUIT 2</a></div>
-        <div class="line line-circuit-2" ng-style="circuit2Underline"></div>
-      </div>
-    </div>
+  <!--<div class="circuit-tab-test">-->
+    <!--<div class="circuit-tab-parent">-->
+      <!--<div class="circuit-tab" ng-click="circuit1()">-->
+        <!--<div class="circuit-link"><a href="">CIRCUIT 1</a></div>-->
+        <!--<div class="line line-circuit-1" ng-style="circuit1Underline"></div>-->
+      <!--</div>-->
+      <!--<div class="circuit-tab" ng-click="circuit2()">-->
+        <!--<div class="circuit-link"><a href="">CIRCUIT 2</a></div>-->
+        <!--<div class="line line-circuit-2" ng-style="circuit2Underline"></div>-->
+      <!--</div>-->
+    <!--</div>-->
 
-  </div>
+  <!--</div>-->
 
 </div>
 <!--Trying tabs-->
@@ -46,30 +46,31 @@
 <div class="workout-container">
   <div class="workout">
 
-
-    <h4>Testing with ng-repeat</h4>
+    <h4>Today's Workout</h4>
     <div>
       <ul>
         <li ng-repeat="item in workoutTest">
-          <!--<div class="workout-parent">-->
           <div class="" ng-click="seeDemo(item.Title)">
           <div >
             <div ><p>{{ item.Title }}</p></div>
-
-            <!--<div class="workout-visual" ng-show="showDemo">-->
-
-              <div ng-show="dictionary[item.Title]">
-                <p>{{ item.Section }}</p>
-                <p>{{ item.Reps }}</p>
+              <div ng-show="dictionary[item.Title]" class="exercise-item-details">
+                   <p><span>Reps</span> {{ item.Reps }}</p>
+                <p><span>Time</span> {{ item.Time }}</p>
+                <p><span>Weight Range</span> {{ item.WeightRange }}</p>
+                <p>{{ item.Steps[0].step }}</p>
+                <p>{{ item.Steps[1].step }}</p>
+                <p>{{ item.Steps[2].step }}</p>
+                <p>{{ item.Steps[2].step }}</p>
+                <p><span>Modifications</span> {{ item.MODS }}</p>
+                <p><span>Section</span> {{ item.Section }}</p>
+                <p><span>Body Parts</span> {{ item.BodyParts }}</p>
+                <p><span>Equipment</span> {{ item.Equipment }}</p>
               </div>
-
-
             </div>
           </div>
         </li>
       </ul>
     </div>
-
 
   </div>
 
