@@ -23,16 +23,16 @@
 
 
   <!--<div class="circuit-tab-test">-->
-    <!--<div class="circuit-tab-parent">-->
-      <!--<div class="circuit-tab" ng-click="circuit1()">-->
-        <!--<div class="circuit-link"><a href="">CIRCUIT 1</a></div>-->
-        <!--<div class="line line-circuit-1" ng-style="circuit1Underline"></div>-->
-      <!--</div>-->
-      <!--<div class="circuit-tab" ng-click="circuit2()">-->
-        <!--<div class="circuit-link"><a href="">CIRCUIT 2</a></div>-->
-        <!--<div class="line line-circuit-2" ng-style="circuit2Underline"></div>-->
-      <!--</div>-->
-    <!--</div>-->
+  <!--<div class="circuit-tab-parent">-->
+  <!--<div class="circuit-tab" ng-click="circuit1()">-->
+  <!--<div class="circuit-link"><a href="">CIRCUIT 1</a></div>-->
+  <!--<div class="line line-circuit-1" ng-style="circuit1Underline"></div>-->
+  <!--</div>-->
+  <!--<div class="circuit-tab" ng-click="circuit2()">-->
+  <!--<div class="circuit-link"><a href="">CIRCUIT 2</a></div>-->
+  <!--<div class="line line-circuit-2" ng-style="circuit2Underline"></div>-->
+  <!--</div>-->
+  <!--</div>-->
 
   <!--</div>-->
 
@@ -44,29 +44,32 @@
 <!--</div>-->
 
 <div class="workout-container">
+  <!--TODO this workout class can be removed-->
   <div class="workout">
 
     <h4>Today's Workout</h4>
     <div>
-      <ul>
+      <ul class="workout-ul">
         <li ng-repeat="item in workoutTest">
-          <div class="" ng-click="seeDemo(item.Title)">
-          <div >
-            <div ><p>{{ item.Title }}</p></div>
-              <div ng-show="dictionary[item.Title]" class="exercise-item-details">
-                   <p><span>Reps</span> {{ item.Reps }}</p>
-                <p><span>Time</span> {{ item.Time }}</p>
-                <p><span>Weight Range</span> {{ item.WeightRange }}</p>
-                <p>{{ item.Steps[0].step }}</p>
-                <p>{{ item.Steps[1].step }}</p>
-                <p>{{ item.Steps[2].step }}</p>
-                <p>{{ item.Steps[2].step }}</p>
-                <p><span>Modifications</span> {{ item.MODS }}</p>
-                <p><span>Section</span> {{ item.Section }}</p>
-                <p><span>Body Parts</span> {{ item.BodyParts }}</p>
-                <p><span>Equipment</span> {{ item.Equipment }}</p>
-              </div>
-            </div>
+          <!--TODO original list had workout-item instead of exercise-title-->
+          <div class="exercise-title" ng-click="seeDemo(item.Title)">
+
+            <div><p>{{ item.Title }}</p></div>
+
+            <!--Hidden exercise details-->
+            <ul ng-show="dictionary[item.Title]" class="exercise-item-details">
+              <li><span>Reps</span> {{ item.Reps }}</li>
+              <li><span>Time</span> {{ item.Time }}</li>
+              <li><span>Weight Range</span> {{ item.WeightRange }}</li>
+              <li><span>Steps</span>{{ item.Steps[0].step }}</li>
+              <li>{{ item.Steps[1].step }}</li>
+              <li>{{ item.Steps[2].step }}</li>
+              <li>{{ item.Steps[2].step }}</li>
+              <li><span>Modifications</span> {{ item.MODS }}</li>
+              <li><span>Section</span> {{ item.Section }}</li>
+              <li><span>Body Parts</span> {{ item.BodyParts }}</li>
+              <li><span>Equipment</span> {{ item.Equipment }}</li>
+            </ul>
           </div>
         </li>
       </ul>
@@ -107,7 +110,7 @@
             </video>
 
             <!--<a href="https://imgflip.com/gif/197h9c"><img src="https://i.imgflip.com/197h9c.gif"-->
-                                                          <!--title="made at imgflip.com"/></a>-->
+            <!--title="made at imgflip.com"/></a>-->
             <!--<img src="../images/jumprope.jpg">-->
           </div>
           <ul class="circuit-exercises">

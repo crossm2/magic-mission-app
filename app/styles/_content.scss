@@ -66,10 +66,41 @@ body {
     font-weight: 400;
   }
 }
+
 //new workout section
-.exercise-item-details span {
-  display: block;
+.workout ul {
+  padding-left: 0;
+
+  //Created 3 sided border for parent, children have bottom borders
+  border-top: .5px solid $grey-dark;
+  border-right: .5px solid $grey-dark;
+  border-left: .5px solid $grey-dark;
+  //@include box-shadow;
+
+  li:hover {
+    background:$grey-hover;
+  }
+  .exercise-title {
+    margin-bottom: 0;
+    padding-left: 15px;
+  }
+  .exercise-item-details {
+    padding-left: 0;
+    p {
+      margin-bottom:0;
+    }
+    //li:hover {
+    //  background: $grey-hover;
+    //  height:100%;
+    //}
+    span {
+      display: block;
+      text-transform: uppercase;
+      color: #757575;
+    }
+  }
 }
+
 
 .circuit-container {
   display: flex;
