@@ -52,19 +52,19 @@
       <ul>
         <li ng-repeat="item in workoutTest">
           <!--<div class="workout-parent">-->
-          <!--<div class="" ng-click="seeDemo()">-->
+          <div class="" ng-click="seeDemo(item.Title)">
           <div >
             <div ><p>{{ item.Title }}</p></div>
 
             <!--<div class="workout-visual" ng-show="showDemo">-->
 
-              <div>
+              <div ng-show="dictionary[item.Title]">
                 <p>{{ item.Section }}</p>
                 <p>{{ item.Reps }}</p>
               </div>
 
 
-            <!--</div>-->
+            </div>
           </div>
         </li>
       </ul>
@@ -101,8 +101,13 @@
         <div class="workout-visual" ng-show="showDemo">
           <!--<img src="images/demo-placeholder.jpg">-->
           <div class="gif-container">
-            <a href="https://imgflip.com/gif/197h9c"><img src="https://i.imgflip.com/197h9c.gif"
-                                                          title="made at imgflip.com"/></a>
+            <video width="200px" height="200px">
+              <source src="">
+            </video>
+
+            <!--<a href="https://imgflip.com/gif/197h9c"><img src="https://i.imgflip.com/197h9c.gif"-->
+                                                          <!--title="made at imgflip.com"/></a>-->
+            <!--<img src="../images/jumprope.jpg">-->
           </div>
           <ul class="circuit-exercises">
             <!--<li><span>Sets</span> {{data.Exercises.Exercise1.Sets}}</li>-->
