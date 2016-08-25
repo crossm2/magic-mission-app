@@ -19,6 +19,9 @@
     // because the request to the server has not returned when we reach this line.
 
 
+    // Dictionary for show/hide values for exercise details
+   $scope.dictionary = {};
+
     /**
      * Playing with data
      * Create a WOD based on Firebase data
@@ -104,10 +107,13 @@
     });
 
     $scope.workoutTest = todaysWorkout;
-      // $scope.testFunction = function(myItem) {
-      //   console.log(myItem);
-      // };
 
+  // add each item in workoutTest to Dictionary, set values to false
+    //loop through workoutTest, copy that index to make new dictionary key
+    for (var i=0; i < todaysWorkout.length; i++) {
+      var key = todaysWorkout[i].Title;
+      $scope.dictionary[key] = false;
+    }
 
 
     /**
@@ -153,11 +159,13 @@
     };
 
     /**
+     * Dictionary for values for showing exercises details on click
+     */
+
+    /**
      * Show workout demo image
      */
     $scope.showDemo = false;
-
-    //when parent workout-item is clicked, show child workout-visual
 
 
     /**
@@ -171,11 +179,12 @@
 
     /**
      * See Demo when user clicks Exercise
+     * @param thisExerciseTitle passed from html as item.Title when function is called
      */
-    $scope.seeDemo = function() {
-      console.log('clicked workout');
-      // change toggle state for img
-      $scope.showDemo = !$scope.showDemo;
+    $scope.seeDemo = function(thisExerciseTitle) {
+      //pass item title to dictionary, swap the value so it shows/hides on each click
+      $scope.dictionary[thisExerciseTitle] = !$scope.dictionary[thisExerciseTitle];
+
     };
 
 
