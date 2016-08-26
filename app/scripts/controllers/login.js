@@ -17,6 +17,7 @@ app.factory("Auth", function($firebaseAuth){
 
 FB.XFBML.parse();
 
+
   //  var ref = new Firebase("https://magic-muscle-mission.firebaseio.com");
   //   Ref.authWithCustomToken().createUserWithEmailAndPassword(email, password).catch(function(error) {
   //     email:"marlie@firebase.com",
