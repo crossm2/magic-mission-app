@@ -52,9 +52,11 @@
       <ul class="workout-ul">
         <li ng-repeat="item in workoutTest">
           <!--TODO original list had workout-item instead of exercise-title-->
-          <div class="exercise-title" ng-click="seeDemo(item.Title)">
+          <div class="exercise-container" ng-click="seeDemo(item.Title)">
 
-            <div><p>{{ item.Title }}</p></div>
+            <div class="exercise-title">
+              <p>{{ item.Title }}</p>
+            </div>
 
             <!--Hidden exercise details-->
             <ul ng-show="dictionary[item.Title]" class="exercise-item-details">
