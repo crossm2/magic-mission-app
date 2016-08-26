@@ -111,20 +111,6 @@ body {
   }
 }
 
-
-.circuit-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  h4 {
-    color: gray;
-  }
-}
-
-.testUnderline {
-  background-color: transparent;
-}
-
 //Exercise List
 .list {
   // padding for exercise list
@@ -196,29 +182,6 @@ li {
   }
 }
 
-//.circuit-tab-test {
-//  height: 50px;
-//  display: flex;
-//  flex-direction: row;
-//  ul {
-//    li {
-//      display: flex;
-//      flex-direction: column;
-//      justify-content: center;
-//
-//      .circuit-link {
-//        text-decoration: none;
-//        font-weight: bold;
-//        color: $indigo;
-//      }
-//      .line {
-//        height: 4px;
-//        width: 90px;
-//        background-color: $indigo;
-//      }
-//    }
-//  }
-//}
 
 .circuit-tab-test {
   height: 70px;
