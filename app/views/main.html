@@ -1,39 +1,35 @@
 <div class="workout-container">
-  <!--TODO this workout class can be removed-->
-  <div class="workout">
 
-    <h4>Today's Workout</h4>
-    <div>
-      <ul class="workout-ul">
-        <li ng-repeat="item in workoutTest">
-          <!--TODO original list had workout-item instead of exercise-title-->
-          <div class="exercise-container" ng-click="seeDemo(item.Title)">
+  <h4>Today's Workout</h4>
+  <div>
+    <ul class="workout-ul">
+      <li ng-repeat="item in workoutTest">
+        <div class="exercise-container" ng-click="seeDemo(item.Title)">
 
-            <div class="exercise-title">
-              <p>{{ item.Title }}</p>
-            </div>
-
-            <!--Hidden exercise details-->
-            <ul ng-show="dictionary[item.Title]" class="exercise-item-details">
-              <li><span>Reps</span> {{ item.Reps }}</li>
-              <li><span>Time</span> {{ item.Time }}</li>
-              <li><span>Weight Range</span> {{ item.WeightRange }}</li>
-              <li><span>Steps</span>{{ item.Steps[0].step }}</li>
-              <li>{{ item.Steps[1].step }}</li>
-              <li>{{ item.Steps[2].step }}</li>
-              <li>{{ item.Steps[2].step }}</li>
-              <li><span>Modifications</span> {{ item.MODS }}</li>
-              <li><span>Section</span> {{ item.Section }}</li>
-              <li><span>Body Parts</span> {{ item.BodyParts }}</li>
-              <li><span>Equipment</span> {{ item.Equipment }}</li>
-            </ul>
+          <div class="exercise-title">
+            <p>{{ item.Title }}</p>
           </div>
-        </li>
-      </ul>
-    </div>
 
+          <!--Hidden exercise details-->
+          <ul ng-show="dictionary[item.Title]" class="exercise-item-details">
+            <li><span>Reps</span> {{ item.Reps }}</li>
+            <li><span>Time</span> {{ item.Time }}</li>
+            <li><span>Weight Range</span> {{ item.WeightRange }}</li>
+            <li><span>Steps</span>{{ item.Steps[0].step }}</li>
+            <li>{{ item.Steps[1].step }}</li>
+            <li>{{ item.Steps[2].step }}</li>
+            <li>{{ item.Steps[2].step }}</li>
+            <li><span>Modifications</span> {{ item.MODS }}</li>
+            <li><span>Section</span> {{ item.Section }}</li>
+            <li><span>Body Parts</span> {{ item.BodyParts }}</li>
+            <li><span>Equipment</span> {{ item.Equipment }}</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
   </div>
 
+  <!--Old code. Keeping for future reference for the 'next button'-->
 
   <!--&lt;!&ndash; Circuit 1 &ndash;&gt;-->
   <!--<div class="circuit-1" ng-show="showCircuit1">-->
