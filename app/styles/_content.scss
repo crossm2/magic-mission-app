@@ -7,41 +7,56 @@
 body {
   background: $grey-light;
   font-family: 'Roboto', sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    color: $grey-blue;
+  }
 }
 
-// Container for index.html, so all pages are indented
+// Container for index.html, so all pages are centered
 .container {
-  margin: 15px;
+  //margin: 15px;
+  margin: 0 auto;
 }
 
 //Navbar
-.navbar {
-  a:nth-child(-n+3):hover {
-    background: $dark-indigo;
+.menu {
+  a:hover {
+    background-color: $dark-indigo;
   }
-  .login-btn {
-    height: 40px;
-    width: 80px;
-    background: transparent;
-    color: white;
-    font-size: 14px;
-    border: 2px solid white;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-
-    &:hover {
-      background: white;
-      color: $indigo;
-    }
-  }
-
 }
+
+//.navbar {
+//  a:nth-child(-n+3):hover {
+//    background: $dark-indigo;
+//  }
+//  .login-btn {
+//    height: 40px;
+//    width: 80px;
+//    background: transparent;
+//    color: white;
+//    font-size: 14px;
+//    border: 2px solid white;
+//    -webkit-border-radius: 5px;
+//    -moz-border-radius: 5px;
+//    border-radius: 5px;
+//
+//    &:hover {
+//      background: white;
+//      color: $indigo;
+//    }
+//  }
+//
+//}
 
 //Workout section
 .workout-container {
   width: 400px;
   margin: 0 auto;
+  h4 {
+    text-align: center;
+    padding-top: 2em;
+    padding-bottom: 1em;
+  }
   .workout-parent {
     display: flex;
     justify-content: space-between;
@@ -89,7 +104,7 @@ body {
     }
     .exercise-title {
       display: flex;
-      align-items:center;
+      align-items: center;
       height: 50px;
       p {
         margin-bottom: 0;
@@ -101,7 +116,7 @@ body {
     padding-left: 0;
     width: 90%;
     p {
-      margin-bottom:0;
+      margin-bottom: 0;
     }
     span {
       display: block;
@@ -181,7 +196,6 @@ li {
     }
   }
 }
-
 
 .circuit-tab-test {
   height: 70px;
@@ -279,6 +293,11 @@ li {
 
 // About page
 // trying cards
+h3 {
+  display: flex;
+  justify-content: center;
+}
+
 .about-card-container {
   display: flex;
   justify-content: center;
@@ -291,17 +310,20 @@ li {
   width: 300px;
   background-color: $blue-grey-500;
   //height: 225px;
-  padding: 15px;
-  //TODO pick random color from list
+  padding: 10px 15px;
+  //TODO pick random color from list?
   color: white;
   display: flex;
   flex-direction: column;
   h5 {
     font-weight: 100;
+    color: white;
+    //padding-left: 14px;
   }
   p {
     color: white;
     font-weight: 100;
+    //padding-left: 14px;
   }
   //&:nth-child(1) {
   //  //background: $pink-700;
