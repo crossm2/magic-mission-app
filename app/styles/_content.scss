@@ -101,9 +101,9 @@ body {
   padding-left: 0;
 
   //Created 3 sided border for parent, children have bottom borders
-  border-top: .5px solid $grey-dark;
-  border-right: .5px solid $grey-dark;
-  border-left: .5px solid $grey-dark;
+  border-top: 1px solid $grey-dark;
+  border-right: 1px solid $grey-dark;
+  border-left: 1px solid $grey-dark;
   @include box-shadow;
 
   .exercise-container {
@@ -432,3 +432,54 @@ li {
   padding-left: 12px;
   padding-bottom: 5px;
 }
+
+
+/*
+Media Queries
+*/
+
+// iPad
+@media only screen
+and (min-width: 768px)
+and (max-width: 1024px){
+  .workout-container {
+    width: 500px;
+  }
+}
+
+//iPhone 6 plus
+@media only screen and (max-width: 414px) {
+  .container {
+    margin-right:0;
+    margin-left: 0;
+  }
+  .workout-container {
+    width: 100%;
+
+    .workout-heading h4 {
+      padding-top: 15px;
+    }
+  }
+  //remove shadows and borders around UL
+ .workout-ul {
+   -webkit-box-shadow: none;
+   -moz-box-shadow:none;
+   box-shadow: none;
+   border-right: none;
+   border-left: none;
+   border-top: 1px solid $grey-dark;
+
+   // Change padding for exercises
+   .exercise-container {
+     padding-left: 35px;
+   }
+ }
+}
+
+//iPhone 5
+@media only screen and (max-width: 320px) {
+  .logo {
+    display: none;
+  }
+}
+
