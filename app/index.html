@@ -9,7 +9,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel='stylesheet' href='bower_components/material-design-lite/material.min.css' />
+  <link rel='stylesheet' href='bower_components/material-design-lite/material.min.css'/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -20,22 +20,25 @@
 
 </head>
 <body ng-app="magicMissionAppApp">
-  <script>
-  window.fbAsyncInit = function() {
+<script>
+  window.fbAsyncInit = function () {
     FB.init({
-      appId      : '1149221148476641',
-      xfbml      : true,
-      version    : 'v2.7'
+      appId: '1149221148476641',
+      xfbml: true,
+      version: 'v2.7'
     });
   };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
+  (function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {
+      return;
+    }
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 </script>
 
 <!--[if lt IE 7]>
@@ -43,101 +46,105 @@
   your browser</a> to improve your experience.</p>
 <![endif]-->
 
-    <!-- Always shows a header, even in smaller screens. -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-          <!-- Title -->
-          <div class="logo"><img src="images/mma_logo.png" height="56" width="58"></div>
-          <span class="mdl-layout-title">Magic Muscle Mission!</span>
-          <div
-            class="fb-like"
-            data-share="true"
-            data-width="450"
-            data-show-faces="true">
-          </div>
-          <!-- Add spacer, to align navigation to the right -->
-          <div class="mdl-layout-spacer"></div>
-          <!-- Navigation. We hide it in small screens. -->
-          <nav class="menu mdl-navigation mdl-layout--large-screen-only">
-            <a class="mdl-navigation__link" href="#/">Workout</a>
-            <!--<a class="mdl-navigation__link" href="">Favorties</a>-->
-            <!--<a class="mdl-navigation__link" href="#/browse">Browse</a>-->
-            <a class="mdl-navigation__link" href="#/about">About</a>
-            <a class="mdl-navigation__link" ng-hide-auth="" href="#/login">Log in</a>
-            <a class="mdl-navigation__link" ng-show-auth="" href="#/account">account</a>
-          </li>
-          </nav>
-        </div>
-      </header>
-      <div class="mdl-layout__drawer">
-        <!--<span class="mdl-layout-title">Title</span>-->
-        <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="#/">Workout</a>
-          <!--<a class="mdl-navigation__link" href="#/browse">Browse</a>-->
-          <a class="mdl-navigation__link" href="#/about">About</a>
-        </nav>
-      </div>
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <div class="logo"><img src="images/mma_logo.png" height="56" width="58"></div>
+      <span class="mdl-layout-title">Magic Muscle Mission!</span>
+
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="menu mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="#/">Workout</a>
+        <!--<a class="mdl-navigation__link" href="">Favorties</a>-->
+        <!--<a class="mdl-navigation__link" href="#/browse">Browse</a>-->
+        <a class="mdl-navigation__link" href="#/about">About</a>
+        <a class="mdl-navigation__link" ng-hide-auth="" href="#/login">Log in</a>
+        <a class="mdl-navigation__link" ng-show-auth="" href="#/account">account</a>
+        </li>
+      </nav>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <!--<span class="mdl-layout-title">Title</span>-->
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="#/">Workout</a>
+      <!--<a class="mdl-navigation__link" href="#/browse">Browse</a>-->
+      <a class="mdl-navigation__link" href="#/about">About</a>
+    </nav>
+  </div>
 
 
-      <div class="container">
-        <div ng-view=""></div>
-      </div>
+  <div class="container">
+    <div ng-view=""></div>
+  </div>
+
+  <!--<div class="fb-sharing">-->
+    <!--<div-->
+      <!--class="fb-like"-->
+      <!--data-share="true"-->
+      <!--data-width="450"-->
+      <!--data-show-faces="true">-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+  <script>
+    !function (A, n, g, u, l, a, r) {
+      A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+          (A[l].q = A[l].q || []).push(arguments)
+        }, A[l].l = +new Date, a = n.createElement(g),
+        r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+    }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-XXXXX-X');
+    ga('send', 'pageview');
+  </script>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/firebase/firebase.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/angular-touch/angular-touch.js"></script>
+  <script src="bower_components/material-design-lite/material.min.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/firebase/firebase.js"></script>
-    <script src="bower_components/angularfire/dist/angularfire.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/material-design-lite/material.min.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts/angularfire/config.js"></script>
+  <script src="scripts/angularfire/firebase.ref.js"></script>
+  <script src="scripts/controllers/chat.js"></script>
+  <script src="scripts/filters/reverse.js"></script>
+  <script src="scripts/angularfire/auth.js"></script>
+  <script src="scripts/controllers/login.js"></script>
+  <script src="scripts/controllers/account.js"></script>
+  <script src="scripts/directives/ngShowAuth.js"></script>
+  <script src="scripts/directives/ngHideAuth.js"></script>
+  <script src="scripts/routes.js"></script>
+  <script src="scripts/controllers/myroute.js"></script>
+  <script src="scripts/controllers/user.js"></script>
+  <script src="scripts/services/myservice.js"></script>
+  <script src="scripts/controllers/browse.js"></script>
+  <script src="scripts/controllers/about.js"></script>
+  <!-- endbuild -->
 
 
-<!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/app.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/angularfire/config.js"></script>
-<script src="scripts/angularfire/firebase.ref.js"></script>
-<script src="scripts/controllers/chat.js"></script>
-<script src="scripts/filters/reverse.js"></script>
-<script src="scripts/angularfire/auth.js"></script>
-<script src="scripts/controllers/login.js"></script>
-<script src="scripts/controllers/account.js"></script>
-<script src="scripts/directives/ngShowAuth.js"></script>
-<script src="scripts/directives/ngHideAuth.js"></script>
-<script src="scripts/routes.js"></script>
-<script src="scripts/controllers/myroute.js"></script>
-<script src="scripts/controllers/user.js"></script>
-<script src="scripts/services/myservice.js"></script>
-<script src="scripts/controllers/browse.js"></script>
-<script src="scripts/controllers/about.js"></script>
-<!-- endbuild -->
-
-
-
-<!-- Firebase -->
-<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-<!-- AngularFire -->
-<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
 </body>
 </html>
