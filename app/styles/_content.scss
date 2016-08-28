@@ -31,6 +31,8 @@ body {
 .logo {
   margin-right: 12px;
   margin-left: -13px;
+  // Table in myroute adds a margin here, so removing
+  margin-bottom: 0;
 }
 //.navbar {
 //  a:nth-child(-n+3):hover {
@@ -127,6 +129,8 @@ body {
       align-items: center;
       -webkit-align-items: center;
       height: 50px;
+      // Table in myroute adds a margin here, so removing
+      margin-bottom: 0;
       p {
         margin-bottom: 0;
         padding-bottom: 0;
@@ -425,6 +429,44 @@ li {
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
 }
+
+
+//Timer page
+.timer{
+  height:100px;
+}
+#clock{
+  width: 300px;
+  height: 100px;
+  border: 1px solid #DDD;
+  clear:none;
+  float:left;
+  font-size: 30pt;
+  padding-left:20px;
+
+
+}
+
+.clock-container, .timer-table {
+  clear:both;
+  margin-bottom: 20px;
+}
+table {
+  width:410px;
+  border:1px solid #DDD;
+}
+
+th {
+  padding: 5px;
+  background-color: #E8EAF6;
+}
+
+td {
+  padding: 5px;
+  background-color: #EEE;
+}
+
+
 
 //Footer
 //footer {
