@@ -1,12 +1,12 @@
 <h1>Mission Timer</h1>
 
 <div id="container" ng-controller="MyrouteCtrl">
-    <div >
+    <div class="clock-container">
         <div id="clock">{{timer}}</div>
         <button ng-click="toggleTimer()">{{mode}}</button>
     </div>
     <div>
-        <table>
+        <table class="timer-table">
             <thead>
                 <tr><th>Start</th><th>End</th><th>Duration (secs)</th></tr>
             </thead>
