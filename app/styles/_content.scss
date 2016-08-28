@@ -5,7 +5,11 @@
 }
 
 body {
-  background: $grey-light;
+  //background: $grey-light;
+  background: url("../images/runner-stretch-gray.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
   font-family: 'Roboto', sans-serif;
   //h1, h2, h3, h4, h5, h6 {
   //  color: $grey-blue;
@@ -99,6 +103,7 @@ body {
 //new workout section
 .workout-ul {
   padding-left: 0;
+  background: white;
 
   //Created 3 sided border for parent, children have bottom borders
   border-top: 1px solid $grey-dark;
