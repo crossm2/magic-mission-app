@@ -149,7 +149,10 @@
          controller: 'BrowseCtrl',
          controllerAs: 'browse'
        })
-
+       .when('/myroute', {
+         templateUrl: 'views/myroute.html',
+         controller: 'MyrouteCtrl'
+       })
        .otherwise({
          redirectTo: '/'
        });
